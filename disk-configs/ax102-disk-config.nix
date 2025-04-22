@@ -52,25 +52,25 @@
         };
       };
     };
-    # disk.disk3 = {
-    #   device = lib.mkDefault "/dev/nvme2n1";
-    #   type = "disk";
-    #   content = {
-    #     type = "gpt";
-    #     partitions = {
-    #       data = {
-    #         name = "data";
-    #         size = "100%";
-    #         content = {
-    #           type = "filesystem";
-    #           format = "ext4";
-    #           mountpoint = "/data2";
-    #           mountOptions = [ "defaults" ];
-    #         };
-    #       };
-    #     };
-    #   };
-    # };
+    disk.disk3 = {
+      device = lib.mkDefault "/dev/nvme2n1";
+      type = "disk";
+      content = {
+        type = "gpt";
+        partitions = {
+          data = {
+            name = "data";
+            size = "100%";
+            content = {
+              type = "filesystem";
+              format = "ext4";
+              mountpoint = "/data1";
+              mountOptions = [ "defaults" ];
+            };
+          };
+        };
+      };
+    };
     lvm_vg = {
       pool = {
         type = "lvm_vg";

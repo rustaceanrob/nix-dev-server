@@ -5,7 +5,7 @@ default:
 # Deploy
 [group('deploy')]
 deploy hostname:
-    nix-shell -p nixos-anywhere --run "nixos-anywhere --flake .#nixos {{hostname}}"
+    nix-shell -p nixos-anywhere --run "nixos-anywhere --build-on-remote --flake .#nixos {{hostname}}"
 
 # Update configuration remotely
 [group('rebuild')]
