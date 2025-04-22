@@ -9,6 +9,12 @@
   home.packages = with pkgs; [
     tokei
   ];
+  
+  programs.git = {
+    enable = true;
+    userName = "rustaceanrob";
+    userEmail = "rob.netzke@gmail.com";
+  };
 
   systemd.user.tmpfiles.rules = [
     "d /home/${username}/flakes/bitcoin - ${username} users - -"
