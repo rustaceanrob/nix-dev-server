@@ -9,11 +9,15 @@
   home.packages = with pkgs; [
     tokei
   ];
-  
+  # C9FBC331E4E83ECD5CD0B5ACF4DD8F8486EC0F1F
   programs.git = {
     enable = true;
     userName = "rustaceanrob";
     userEmail = "rob.netzke@gmail.com";
+    signing = {
+       key = "C9FBC331E4E83ECD5CD0B5ACF4DD8F8486EC0F1F";
+       signByDefault = true;
+    };
   };
 
   systemd.user.tmpfiles.rules = [

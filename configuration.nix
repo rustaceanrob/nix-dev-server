@@ -57,6 +57,7 @@
     delta
     difftastic
     doxygen
+    gcc
     lazygit
     lua
     python3
@@ -185,7 +186,7 @@
   };
 
   networking = {
-    hostName = "nixos";
+    hostName = "2140";
     networkmanager.enable = true;
     firewall = {
       enable = true;
