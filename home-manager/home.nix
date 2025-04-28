@@ -9,7 +9,13 @@
   home.packages = with pkgs; [
     tokei
   ];
-  # C9FBC331E4E83ECD5CD0B5ACF4DD8F8486EC0F1F
+  
+  programs.bash.enable = true;
+
+  home.sessionVariables = {
+    BITCOIND_EXE = "/run/current-system/sw/bin/bitcoind";
+  };
+
   programs.git = {
     enable = true;
     userName = "rustaceanrob";
