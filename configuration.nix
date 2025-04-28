@@ -54,10 +54,12 @@
     zoxide
 
     # Development tools
+    bitcoin
     delta
     difftastic
     doxygen
     gcc
+    gnumake
     lazygit
     lua
     python3

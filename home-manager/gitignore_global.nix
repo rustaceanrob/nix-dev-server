@@ -1,0 +1,5 @@
+[
+  "justfile"
+  ".envrc"
+  ".direnv/"
+]

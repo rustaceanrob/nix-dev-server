@@ -18,6 +18,7 @@
        key = "C9FBC331E4E83ECD5CD0B5ACF4DD8F8486EC0F1F";
        signByDefault = true;
     };
+    ignores = import ./gitignore_global.nix;
   };
 
   systemd.user.tmpfiles.rules = [
