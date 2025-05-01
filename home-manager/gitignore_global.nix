@@ -2,4 +2,5 @@
   "justfile"
   ".envrc"
   ".direnv/"
+  ".cache/"
 ]
