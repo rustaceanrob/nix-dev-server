@@ -55,6 +55,7 @@
 
     # Development tools
     bitcoin
+    capnproto
     delta
     difftastic
     doxygen
