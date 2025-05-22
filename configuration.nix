@@ -39,6 +39,7 @@
     mosh
     ncdu
     nettools
+    perf-tools
     pinentry
     pinentry-curses
     pinentry-tty
