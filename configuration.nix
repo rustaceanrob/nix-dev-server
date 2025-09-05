@@ -48,10 +48,12 @@
     starship
     time
     tor
+    unzip
     wget
     wl-clipboard
     yubikey-manager
     yubikey-personalization
+    zip
     zoxide
 
     # Development tools
