@@ -23,6 +23,7 @@
   environment.systemPackages = with pkgs; [
     # Basic tools
     bat
+    btop
     curl
     direnv
     eza
