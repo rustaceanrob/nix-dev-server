@@ -29,6 +29,7 @@
           python312Packages.autopep8
           python312Packages.flake8
           python312Packages.mypy
+          python312Packages.vulture
           python312Packages.pyzmq
           python312Packages.requests
         ];
