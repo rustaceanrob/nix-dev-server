@@ -71,6 +71,7 @@
     python3
     rustup
     uv
+    zellij
   ];
 
   fonts = {
