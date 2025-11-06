@@ -33,6 +33,7 @@
     git
     gnupg
     htop
+    hyperfine
     jq
     just
     keyd
