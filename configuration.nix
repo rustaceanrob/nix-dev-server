@@ -41,6 +41,7 @@
     mosh
     ncdu
     nettools
+    openssl
     perf-tools
     pinentry
     pinentry-curses
