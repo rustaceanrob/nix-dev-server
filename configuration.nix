@@ -43,6 +43,7 @@
     nettools
     openssl
     perf-tools
+    pkgconf
     pinentry
     pinentry-curses
     pinentry-tty
