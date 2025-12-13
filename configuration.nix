@@ -72,6 +72,7 @@
     lua
     python3
     rustup
+    sqlite
     uv
     zellij
   ];
