@@ -70,6 +70,7 @@
     gnumake
     lazygit
     lua
+    ollama
     python3
     rustup
     sqlite
@@ -242,6 +243,7 @@
       };
     };
 
+    ollama.enable = true;
     # YubiKey support
     pcscd.enable = true;
     udev.packages = [ pkgs.yubikey-personalization pkgs.libu2f-host ];
