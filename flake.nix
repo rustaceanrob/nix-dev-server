@@ -22,7 +22,7 @@
       vars = import ./vars.nix;
     in
     {
-      nixosConfigurations."2140" = nixpkgs.lib.nixosSystem {
+      nixosConfigurations."home" = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
           disko.nixosModules.disko

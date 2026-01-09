@@ -202,7 +202,7 @@
   };
 
   networking = {
-    hostName = "2140";
+    hostName = "home";
     networkmanager.enable = true;
     firewall = {
       enable = true;
