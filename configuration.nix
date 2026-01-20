@@ -63,6 +63,7 @@
     difftastic
     doxygen
     gcc
+    go
     gnumake
     lazygit
     lua
