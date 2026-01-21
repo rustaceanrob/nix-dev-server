@@ -216,7 +216,7 @@
     networkmanager.enable = true;
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 80 443 22 8333 ];
+      allowedTCPPorts = [ 80 443 22 8080 8333 ];
       allowPing = true;
     };
   };
