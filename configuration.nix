@@ -68,6 +68,10 @@
     doxygen
     gcc
     gnumake
+    go
+    gopls
+    gotools
+    go-tools
     lazygit
     lua
     ollama

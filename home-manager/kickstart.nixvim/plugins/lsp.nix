@@ -87,9 +87,9 @@
         clangd = {
           enable = true;
         };
-        # gopls = {
-        #   enable = true;
-        # };
+        gopls = {
+          enable = true;
+        };
         basedpyright = {
           enable = true;
         };
