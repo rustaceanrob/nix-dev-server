@@ -206,6 +206,7 @@
     hostName = "home";
     networkmanager.enable = true;
     firewall = {
+      allowedTCPPorts = [ 80 443 22 8332 ];
       enable = true;
       allowPing = true;
     };
