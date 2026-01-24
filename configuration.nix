@@ -67,6 +67,7 @@
     gnumake
     lazygit
     lua
+    honggfuzz
     python3
     rustup
     uv
