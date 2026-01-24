@@ -41,6 +41,7 @@
     mosh
     ncdu
     nettools
+    nginx
     openssl
     perf-tools
     pkgconf
