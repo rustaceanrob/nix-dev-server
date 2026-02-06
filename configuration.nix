@@ -55,6 +55,7 @@
     yubikey-personalization
     zip
     zoxide
+    zstd
 
     # Development tools
     bitcoin
