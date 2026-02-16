@@ -15,7 +15,6 @@
   home.sessionVariables = {
     BITCOIND_EXE = "/run/current-system/sw/bin/bitcoind";
     BITCOIN_RPC_USER = "rob";
-    BITCOIN_RPC_PASS = "GroteBiertje111clear!";
   };
 
   programs.git = {
