@@ -249,6 +249,11 @@
       };
     };
 
+    tor = {
+      enable = true;
+      client.enable = true;
+    };
+
     ollama.enable = true;
     # YubiKey support
     pcscd.enable = true;
