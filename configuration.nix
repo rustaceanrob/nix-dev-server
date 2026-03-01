@@ -148,7 +148,7 @@
     terminal = "tmux-256color";
     keyMode = "vi";
     extraConfig = ''
-      # Pass through ghostty capabilites
+      # Pass through ghostty capabilities
       set -ga terminal-overrides ",xterm-ghostty:*"
 
       # unbind the prefix and bind it to Ctrl-a like screen
@@ -239,6 +239,11 @@
         PermitRootLogin = "no";
         StreamLocalBindUnlink = true;
       };
+    };
+
+    tor = {
+      enable = true;
+      client.enable = true;
     };
 
     # YubiKey support
