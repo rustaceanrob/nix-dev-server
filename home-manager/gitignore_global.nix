@@ -4,4 +4,5 @@
   ".direnv/"
   ".cache/"
   "bench.sh"
+  "output.log"
 ]

@@ -254,7 +254,7 @@
       client.enable = true;
     };
 
-    ollama.enable = true;
+    ollama.enable = false;
     # YubiKey support
     pcscd.enable = true;
     udev.packages = [ pkgs.yubikey-personalization pkgs.libu2f-host ];
