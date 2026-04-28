@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ pkgs, rbmt, username, ... }:
 {
   home.stateVersion = "25.05";
 
@@ -7,6 +7,7 @@
   ];
 
   home.packages = with pkgs; [
+    rbmt
     tokei
   ];
   
@@ -29,6 +30,7 @@
   };
 
   systemd.user.tmpfiles.rules = [
+
     "d /home/${username}/flakes/bitcoin - ${username} users - -"
     "C /home/${username}/flakes/bitcoin/flake.nix 0744 ${username} users - ${./bitcoin/flake.nix}"
     "C /home/${username}/flakes/bitcoin/flake.lock 0744 ${username} users - ${./bitcoin/flake.lock}"
