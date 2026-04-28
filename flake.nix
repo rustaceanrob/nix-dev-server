@@ -30,7 +30,7 @@
         pname = "cargo-rbmt";
         version = "0.1.0";
         src = rbmtSrc + "/cargo-rbmt";
-        cargoLock = rbmtSrc + "/cargo-rbmt/Cargo.lock";
+        cargoLock = null;
       };
     in
     {
