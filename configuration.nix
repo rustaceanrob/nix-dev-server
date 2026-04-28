@@ -79,7 +79,7 @@
     ollama
     python3
     rustup
-    rbmt
+    # rbmt - installed via rustup
     sqlite
     uv
     zellij

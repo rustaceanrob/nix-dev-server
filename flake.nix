@@ -20,19 +20,6 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       vars = import ./vars.nix;
-      rbmtSrc = pkgs.fetchFromGitHub {
-        owner = "rust-bitcoin";
-        repo = "rust-bitcoin-maintainer-tools";
-        rev = "master";
-        hash = "sha256-0dp2k35m24p62xinqg3cf99v1hv3czk2nm0w4bcn030m6b1d95mv";
-      };
-      rbmt = pkgs.rustPlatform.buildRustPackage {
-        pname = "cargo-rbmt";
-        version = "0.1.0";
-        src = rbmtSrc + "/cargo-rbmt";
-        cargoLock = null;
-        cargoHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
-      };
     in
     {
       nixosConfigurations."2140" = nixpkgs.lib.nixosSystem {
@@ -43,7 +30,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit pkgs rbmt; username = vars.username; };
+            home-manager.extraSpecialArgs = { inherit pkgs; username = vars.username; };
             home-manager.users.${vars.username} = {
               imports = [
                 nixvim.homeManagerModules.nixvim
@@ -61,8 +48,5 @@
         ];
       };
       formatter.${system} = pkgs.nixpkgs-fmt;
-      packages.${system} = {
-        inherit rbmt;
-      };
     };
 }

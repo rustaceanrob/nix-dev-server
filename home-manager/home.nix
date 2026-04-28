@@ -1,4 +1,4 @@
-{ pkgs, rbmt, username, ... }:
+{ pkgs, username, ... }:
 {
   home.stateVersion = "25.05";
 
@@ -7,11 +7,17 @@
   ];
 
   home.packages = with pkgs; [
-    rbmt
+
     tokei
   ];
   
   programs.bash.enable = true;
+  programs.bash.initSingleLine = ''
+    # Install cargo-rbmt if not present
+    if [ ! -f "$HOME/.cargo/bin/cargo-rbmt" ]; then
+      cargo install --git https://github.com/rust-bitcoin/rust-bitcoin-maintainer-tools --locked 2>/dev/null &
+    fi
+  '';
 
   home.sessionVariables = {
     BITCOIND_EXE = "/run/current-system/sw/bin/bitcoind";
