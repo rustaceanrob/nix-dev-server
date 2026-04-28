@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ pkgs, rbmt, username, ... }:
 {
   home.stateVersion = "25.05";
 
@@ -7,11 +7,11 @@
   ];
 
   home.packages = with pkgs; [
+    rbmt
     tokei
   ];
   
   programs.bash.enable = true;
-
   home.sessionVariables = {
     BITCOIND_EXE = "/run/current-system/sw/bin/bitcoind";
     BITCOIN_RPC_USER = "rob";
@@ -28,7 +28,25 @@
     ignores = import ./gitignore_global.nix;
   };
 
+  systemd.user.services.install-rbmt = {
+      description = "Install cargo-rbmt";
+      wantedBy = [ "default.target" ];
+      serviceConfig = {
+        Type = "oneshot";
+        RemainAfterExit = true;
+        ExecStart = pkgs.writeShellApplication {
+          text = ''
+            if [ ! -f "$HOME/.cargo/bin/cargo-rbmt" ]; then
+              cargo install --git https://github.com/rust-bitcoin/rust-bitcoin-maintainer-tools --bin cargo-rbmt --locked
+            fi
+          '';
+          runtimeInputs = [ pkgs.cargo ];
+        };
+      };
+    };
+
   systemd.user.tmpfiles.rules = [
+
     "d /home/${username}/flakes/bitcoin - ${username} users - -"
     "C /home/${username}/flakes/bitcoin/flake.nix 0744 ${username} users - ${./bitcoin/flake.nix}"
     "C /home/${username}/flakes/bitcoin/flake.lock 0744 ${username} users - ${./bitcoin/flake.lock}"

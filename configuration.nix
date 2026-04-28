@@ -2,6 +2,7 @@
 , pkgs
 , sshKey
 , username
+, rbmt
 , ...
 }:
 {
@@ -78,6 +79,8 @@
     ollama
     python3
     rustup
+    rbmt
+
     sqlite
     uv
     zellij
