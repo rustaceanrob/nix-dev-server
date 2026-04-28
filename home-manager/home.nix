@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ pkgs, rbmt, username, ... }:
 {
   home.stateVersion = "25.05";
 
@@ -7,7 +7,7 @@
   ];
 
   home.packages = with pkgs; [
-
+    rbmt
     tokei
   ];
   
@@ -29,15 +29,19 @@
   };
 
   systemd.user.services.install-rbmt = {
+      description = "Install cargo-rbmt";
       wantedBy = [ "default.target" ];
       serviceConfig = {
         Type = "oneshot";
         RemainAfterExit = true;
-        ExecStart = "${pkgs.writeShellScriptBin "install-rbmt" ''
-          if [ ! -f "$HOME/.cargo/bin/cargo-rbmt" ]; then
-            cargo install --git https://github.com/rust-bitcoin/rust-bitcoin-maintainer-tools --bin cargo-rbmt --locked
-          fi
-        ''}/bin/install-rbmt";
+        ExecStart = pkgs.writeShellApplication {
+          text = ''
+            if [ ! -f "$HOME/.cargo/bin/cargo-rbmt" ]; then
+              cargo install --git https://github.com/rust-bitcoin/rust-bitcoin-maintainer-tools --bin cargo-rbmt --locked
+            fi
+          '';
+          runtimeInputs = [ pkgs.cargo ];
+        };
       };
     };
 

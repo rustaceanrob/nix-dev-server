@@ -79,6 +79,7 @@
     ollama
     python3
     rustup
+    rbmt
 
     sqlite
     uv
