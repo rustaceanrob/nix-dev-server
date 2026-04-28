@@ -31,6 +31,7 @@
         version = "0.1.0";
         src = rbmtSrc + "/cargo-rbmt";
         cargoLock = null;
+        cargoHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
       };
     in
     {
