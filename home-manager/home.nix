@@ -12,13 +12,6 @@
   ];
   
   programs.bash.enable = true;
-  programs.bash.initSingleLine = ''
-    # Install cargo-rbmt if not present
-    if [ ! -f "$HOME/.cargo/bin/cargo-rbmt" ]; then
-      cargo install --git https://github.com/rust-bitcoin/rust-bitcoin-maintainer-tools --locked 2>/dev/null &
-    fi
-  '';
-
   home.sessionVariables = {
     BITCOIND_EXE = "/run/current-system/sw/bin/bitcoind";
     BITCOIN_RPC_USER = "rob";
@@ -34,6 +27,23 @@
     };
     ignores = import ./gitignore_global.nix;
   };
+
+  systemd.user.services.install-rbmt = {
+      description = "Install cargo-rbmt";
+      wantedBy = [ "default.target" ];
+      serviceConfig = {
+        Type = "oneshot";
+        RemainAfterExit = true;
+        ExecStart = pkgs.writeShellApplication {
+          text = ''
+            if [ ! -f "$HOME/.cargo/bin/cargo-rbmt" ]; then
+              cargo install --git https://github.com/rust-bitcoin/rust-bitcoin-maintainer-tools --bin cargo-rbmt --locked
+            fi
+          '';
+          runtimeInputs = [ pkgs.cargo ];
+        };
+      };
+    };
 
   systemd.user.tmpfiles.rules = [
 
