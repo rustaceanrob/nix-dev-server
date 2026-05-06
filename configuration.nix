@@ -29,6 +29,7 @@
     eza
     fd
     fzf
+    gdb
     gh
     git
     gnupg
