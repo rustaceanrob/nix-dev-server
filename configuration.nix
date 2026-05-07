@@ -65,7 +65,6 @@
     # Development tools
     bitcoin
     capnproto
-    claude-code
     delta
     difftastic
     doxygen
