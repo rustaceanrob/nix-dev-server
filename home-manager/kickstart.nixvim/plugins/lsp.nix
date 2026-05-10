@@ -12,7 +12,6 @@
       isort
       lua-language-server
       nil
-      nodePackages.jsonlint
       pyright
       ruff
       stylua

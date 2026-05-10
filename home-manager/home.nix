@@ -19,8 +19,8 @@
 
   programs.git = {
     enable = true;
-    userName = "rustaceanrob";
-    userEmail = "rob.netzke@gmail.com";
+    settings.user.name = "rustaceanrob";
+    settings.user.email = "rob.netzke@gmail.com";
     signing = {
        key = "C9FBC331E4E83ECD5CD0B5ACF4DD8F8486EC0F1F";
        signByDefault = true;
