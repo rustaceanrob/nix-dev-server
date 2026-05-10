@@ -1,6 +1,5 @@
 {
   inputs = {
-    claude-code.url = "github:sadjow/claude-code-nix";
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     disko = {
       url = "github:nix-community/disko";
@@ -16,7 +15,7 @@
     };
   };
 
-  outputs = { nixpkgs, disko, nixvim, home-manager, claude-code, ... }:
+  outputs = { nixpkgs, disko, nixvim, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -26,7 +25,6 @@
       nixosConfigurations."2140" = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          { nixpkgs.overlays = [ claude-code.overlays.default ]; }
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
           {

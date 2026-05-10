@@ -25,6 +25,7 @@
     bat
     btop
     curl
+    claude-code
     direnv
     eza
     fd
