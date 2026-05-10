@@ -12,7 +12,7 @@
       isort
       lua-language-server
       nil
-      nodePackages.jsonlint
+      # nodePackages.jsonlint
       pyright
       ruff
       stylua

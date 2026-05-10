@@ -40,7 +40,6 @@
     openssl
     perf-tools
     pkgconf
-    pinentry
     pinentry-curses
     pinentry-tty
     ripgrep
@@ -68,7 +67,7 @@
     gnumake
     lazygit
     lua
-    honggfuzz
+    # honggfuzz
     python3
     rustup
     uv
@@ -81,7 +80,7 @@
       font-awesome
       nerd-fonts.jetbrains-mono
       noto-fonts
-      noto-fonts-emoji
+      noto-fonts-color-emoji
     ];
     fontconfig.defaultFonts = {
       monospace = [ "JetBrainsMono Nerd Font" ];
