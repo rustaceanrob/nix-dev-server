@@ -5,4 +5,5 @@
   ".cache/"
   "bench.sh"
   "output.log"
+  ".claude/"
 ]
