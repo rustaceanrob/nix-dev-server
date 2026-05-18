@@ -6,4 +6,5 @@
   "bench.sh"
   "output.log"
   ".claude/"
+  "keys.out"
 ]
