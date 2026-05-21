@@ -7,4 +7,5 @@
   "output.log"
   ".claude/"
   "keys.out"
+  "bench-mempool-delta.py"
 ]
