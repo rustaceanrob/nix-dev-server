@@ -8,4 +8,5 @@
   ".claude/"
   "keys.out"
   "bench-mempool-delta.py"
+  "run-clang-tidy.sh"
 ]
