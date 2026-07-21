@@ -62,6 +62,13 @@
     zip
     zoxide
 
+    # Guix
+    guix
+    xar
+    pbzx
+    cpio
+    rcodesign
+
     # Development tools
     bitcoin
     capnproto
@@ -254,6 +261,8 @@
       enable = true;
       client.enable = true;
     };
+
+    guix.enable = true;
 
     ollama.enable = false;
     # YubiKey support
