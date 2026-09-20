@@ -44,6 +44,7 @@
     ncdu
     nettools
     nginx
+    opencode
     openssl
     perf-tools
     pkgconf
