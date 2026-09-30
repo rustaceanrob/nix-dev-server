@@ -20,6 +20,19 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
+  # mosh 1.4.0 fails to build against modern abseil/protobuf, which require
+  # C++20, because the Nixpkgs build pins mosh's configure check to C++17.
+  # Force the whole build to use C++20 until this is fixed upstream.
+  nixpkgs.overlays = [
+    (final: prev: {
+      mosh = prev.mosh.overrideAttrs (old: {
+        postPatch = (old.postPatch or "") + ''
+          substituteInPlace configure.ac --replace-fail "AX_CXX_COMPILE_STDCXX([17])" "CXXFLAGS=\"\$CXXFLAGS -std=gnu++20\""
+        '';
+      });
+    })
+  ];
+
   environment.systemPackages = with pkgs; [
     # Basic tools
     bat

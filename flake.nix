@@ -30,10 +30,10 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit pkgs; username = vars.username; };
+            home-manager.extraSpecialArgs = { inherit pkgs nixpkgs; username = vars.username; };
             home-manager.users.${vars.username} = {
               imports = [
-                nixvim.homeManagerModules.nixvim
+                nixvim.homeModules.nixvim
                 ./home-manager/home.nix
               ];
             };

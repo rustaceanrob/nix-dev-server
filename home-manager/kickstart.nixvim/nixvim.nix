@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, nixpkgs, ... }: {
   imports = [
     ./plugins/conform.nix
     ./plugins/gitsigns.nix
@@ -21,6 +21,10 @@
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
+
+    # Pin Nixvim to the same Nixpkgs as the rest of the system so it does not
+    # warn about the `inputs.nixvim.inputs.nixpkgs.follows` override.
+    nixpkgs.source = nixpkgs.outPath;
 
     # You can easily change to a different colorscheme.
     # Add your colorscheme here and enable it.
